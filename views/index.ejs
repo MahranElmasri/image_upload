@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Upload</title>
+	 <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> 
+
+</head>
+<body>
+	<div class="container">
+		<%= typeof msg !='undefined' ? msg : '' %>
+		<h1>File Upload</h1>
+			<form action="/upload" method="POST" enctype="multipart/form-data">
+			    <div class="file-field input-field">
+			      <div class="btn grey">
+			        <span>File</span>
+			        <input name="myImage" type="file">
+			      </div>
+			      <div class="file-path-wrapper">
+			        <input  class="file-path validate" type="text">
+			      </div>
+			    </div>
+			    <button class="btn" type="submit">SUBMIT</button>
+	  		</form>
+	  		<br/>
+	  		<img src="<%= typeof file !='undefined' ? file : '' %>" class="img-responsive">
+	</div>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+</html>
